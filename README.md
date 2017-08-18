@@ -1,2 +1,2 @@
-# angular-blob-uploader
+# angular-blob-uploader [![AppVeyor Status](https://img.shields.io/appveyor/ci/blinkmobile/angular-blob-uploader/master.svg)](https://ci.appveyor.com/project/blinkmobile/angular-blob-uploader) [![npm](https://img.shields.io/npm/v/angular-blob-uploader.svg?maxAge=2592000)](https://www.npmjs.com/package/angular-blob-uploader) [![Travis CI Status](https://travis-ci.org/blinkmobile/angular-blob-uploader.svg?branch=master)](https://travis-ci.org/blinkmobile/angular-blob-uploader)
 Angular wrapper for the blob uploader service

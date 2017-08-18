@@ -1,0 +1,49 @@
+{
+  "name": "angular-blob-uploader",
+  "description": "Angular wrapper for the blob uploader service",
+  "version": "1.0.0",
+  "bugs": {
+    "url": "https://github.com/blinkmobile/angular-blob-uploader/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^4.4.1",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "faucet": "^0.0.1",
+    "fetch-mock": "^5.12.2",
+    "fixpack": "^2.3.1",
+    "flow-bin": "^0.53.1",
+    "jasmine-core": "^2.7.0",
+    "karma": "^1.7.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jasmine": "^1.1.0",
+    "npm-run-all": "^4.0.2",
+    "remark-cli": "^4.0.0",
+    "remark-lint": "^6.0.1",
+    "remark-preset-lint-recommended": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=6",
+    "npm": ">=3"
+  },
+  "homepage": "https://github.com/blinkmobile/angular-blob-uploader#readme",
+  "keywords": [],
+  "license": "ISC",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blinkmobile/angular-blob-uploader.git"
+  },
+  "scripts": {
+    "eslint": "eslint --fix --cache .",
+    "fixpack": "fixpack",
+    "flow_check": "flow check",
+    "pretest": "npm-run-all eslint flow_check remark fixpack",
+    "remark": "remark . --use remark-preset-lint-recommended",
+    "test": "karma start karma.conf.js --single-run"
+  }
+}
