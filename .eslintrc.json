@@ -1,8 +1,16 @@
 {
   "env": {
-      "browser": true
+      "browser": true,
+      "es6": true,
+      "jasmine": true
   },
-  "extends": [ "eslint:recommended",
-      "standard"
+  "plugins": [
+    "angular",
+    "node"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "standard",
+    "angular"
   ]
 }
