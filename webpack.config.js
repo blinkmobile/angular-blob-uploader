@@ -49,6 +49,12 @@ module.exports = {
             presets: ['es2015', 'env']
           }
         }
+      },
+      {
+        test: /\.html$/,
+        use: {
+          loader: 'html-loader'
+        }
       }
     ]
   }

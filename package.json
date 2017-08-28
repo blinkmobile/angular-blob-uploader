@@ -29,6 +29,7 @@
     "fetch-mock": "^5.12.2",
     "fixpack": "^2.3.1",
     "flow-bin": "^0.53.1",
+    "html-loader": "^0.5.1",
     "jasmine-core": "^2.7.0",
     "karma": "^1.7.0",
     "karma-chrome-launcher": "^2.2.0",

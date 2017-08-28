@@ -1,12 +1,10 @@
 // @flow
 'use strict'
 
-// import BmUploaderComponent from './bm-uploader-component.js'
+import bmImageComponent from './bm-image-component.js'
 import bmUploaderService from './bm-uploader-service.js'
 
-const angular = require('angular')
-
-// eslint-disable-next-line angular/no-service-method
-angular.module('bmUploader', [])
-  .service('bmUploader', bmUploaderService)
-  // .component('bmUploader', BmUploaderComponent)
+// $FlowFixMe
+angular.module('bmUploader', []) // eslint-disable-line no-undef, angular/no-service-method
+  .service('bmUploaderService', bmUploaderService)
+  .component('bmImage', bmImageComponent)
