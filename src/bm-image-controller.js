@@ -1,20 +1,20 @@
 // @flow
 'use strict'
 
-bmImageController.$inject = ['$rootScope', 'bmUploaderService']
-
-function bmImageController (
-  $rootScope,
-  bmUploaderService
+export default function bmImageController (
+  $rootScope /* :any */,
+  bmUploaderService /* :any */
 ) {
+  'ngInject'
   const ctrl = this
-  ctrl.BLOB_API_URL = $rootScope.BlobApiUrl
+  ctrl.imageId = '2cc12da2-c0fd-4d76-b531-8afe2fe17228'
   ctrl.$onInit = function () {
     if (!ctrl.imageId) {
       return
     }
-    bmUploaderService.retrieveContentUrl(ctrl.imageId).then((url) => {
-      ctrl.src = url
-    })
+    bmUploaderService.retrieveContentUrl(ctrl.imageId)
+      .then((url) => {
+        ctrl.src = url
+      })
   }
 }

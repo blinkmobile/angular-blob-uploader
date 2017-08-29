@@ -23,8 +23,8 @@ module.exports = {
   output: {
     filename: '[name].js',
     path: distPath,
-    libraryTarget: 'var',
-    library: 'angularBMUploader'
+    library: 'bmUploader',
+    libraryTarget: 'umd'
   },
   devtool: 'inline-source-map',
   plugins: [
@@ -46,7 +46,8 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['es2015', 'env']
+            presets: ['es2015', 'env'],
+            plugins: [['angularjs-annotate', { 'explicitOnly': true }]]
           }
         }
       },

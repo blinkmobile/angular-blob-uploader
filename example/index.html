@@ -1,12 +1,18 @@
-<<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" ng-app="bmUploaderDemo">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Angular BMUploader demo</title>
+  <script src="../node_modules/angular/angular.js"></script>
+  <script src="./app.js"></script>
+  <script src="../dist/angular-bm-uploader.js"></script>
 </head>
 <body>
-  
+  <h1>Angular BMUploader</h1>
+  <div>
+    <bm-image imageId='{{ctrl.imageId}}'></bm-image>
+  </div>
 </body>
 </html>
