@@ -9,18 +9,12 @@ export default function bmImageController (
   const ctrl = this
 
   ctrl.$onChanges = (changesObj) => {
-    if (changesObj.imageId) {
-      if (changesObj.imageId.currentValue) {
-        getImage(changesObj.imageId.currentValue)
-      }
+    if (changesObj.imageId && changesObj.imageId.currentValue) {
+      bmUploaderService.retrieveContentUrl(changesObj.imageId.currentValue)
+        .then((url) => {
+          ctrl.src = url
+          $scope.$apply()
+        })
     }
-  }
-
-  function getImage (imageId) {
-    bmUploaderService.retrieveContentUrl(imageId)
-      .then((url) => {
-        ctrl.src = url
-        $scope.$apply()
-      })
   }
 }
