@@ -7,12 +7,17 @@ export default function bmImageController (
 ) {
   'ngInject'
   const ctrl = this
-  ctrl.$onInit = function () {
-    if (!ctrl.imageId) {
-      return
-    }
 
-    bmUploaderService.retrieveContentUrl(ctrl.imageId)
+  ctrl.$onChanges = (changesObj) => {
+    if (changesObj.imageId) {
+      if (changesObj.imageId.currentValue) {
+        getImage(changesObj.imageId.currentValue)
+      }
+    }
+  }
+
+  function getImage (imageId) {
+    bmUploaderService.retrieveContentUrl(imageId)
       .then((url) => {
         ctrl.src = url
         $scope.$apply()

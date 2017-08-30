@@ -13,6 +13,7 @@ angular.module('bmUploaderDemo', [
     const vm = this
     vm.files = []
     vm.percentageUploaded = 0
+    vm.imageId = ''
     $scope.$watch(() => vm.files, (newValue, oldValue) => {
       if (newValue === oldValue) {
         return
@@ -23,12 +24,14 @@ angular.module('bmUploaderDemo', [
           return vm.uploader.upload()
             .then(() => {
               vm.result = 'Upload succeeded with id: ' + vm.uploader.id
+              vm.imageId = vm.uploader ? vm.uploader.id : ''
               vm.uploader = null
               $scope.$apply()
             })
             .catch((err) => {
               vm.result = 'Upload failed with err: ' + err
               vm.uploader = null
+              vm.imageId = ''
               $scope.$apply()
             })
         })
