@@ -7,10 +7,9 @@
     "url": "https://github.com/blinkmobile/angular-bm-uploader/issues"
   },
   "dependencies": {
-    "@blinkmobile/bm-uploader": "file:///apps/github/bm-uploader.js"
+    "@blinkmobile/bm-uploader": "1.0.1"
   },
   "devDependencies": {
-    "@blinkmobile/bm-uploader": "file:///apps/github/bm-uploader.js",
     "angular": "^1.6.6",
     "angular-mocks": "^1.6.6",
     "babel-core": "^6.26.0",
