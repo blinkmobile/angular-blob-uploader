@@ -22,7 +22,7 @@
       {{ctrl.result}}
     </div>
     <div class='progress'>
-      <div class='progress-bar' role="progressbar" aria-valuenow="{{ctrl.uploaded}}" aria-valuemin="0" aria-valuemax="{{ctrl.total}}" style="width:0%">
+      <div class='progress-bar' role="progressbar" aria-valuenow="{{ctrl.uploaded}}" aria-valuemin="0" aria-valuemax="{{ctrl.total}}" ng-style="{ 'width': ctrl.percentageUploaded + '%' }">
         {{ctrl.percentageUploaded}}%
       </div>
     </div>

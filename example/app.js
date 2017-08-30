@@ -12,8 +12,9 @@ angular.module('bmUploaderDemo', [
     'ngInject'
     const vm = this
     vm.files = []
+    vm.percentageUploaded = 0
     $scope.$watch(() => vm.files, (newValue, oldValue) => {
-      if ((newValue === oldValue) && newValue) {
+      if (newValue === oldValue) {
         return
       }
       return bmUploaderService.uploadContent(vm.files[0], vm.progress)
