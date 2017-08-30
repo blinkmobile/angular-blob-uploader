@@ -11,9 +11,12 @@ angular.module('bmUploaderDemo', [
   ) {
     'ngInject'
     const vm = this
-    // eslint-disable-next-line angular/controller-as
-    $scope.uploadFile = (event) => {
-      return bmUploaderService.uploadContent(event.target.files[0], vm.progress)
+    vm.files = []
+    $scope.$watch(() => vm.files, (newValue, oldValue) => {
+      if ((newValue === oldValue) && newValue) {
+        return
+      }
+      return bmUploaderService.uploadContent(vm.files[0], vm.progress)
         .then((uploader) => {
           vm.uploader = uploader
           return vm.uploader.upload()
@@ -28,7 +31,7 @@ angular.module('bmUploaderDemo', [
               $scope.$apply()
             })
         })
-    }
+    })
 
     vm.progress = (uploaded, total) => {
       const percentage = parseInt((uploaded * 100) / total)
@@ -43,12 +46,14 @@ angular.module('bmUploaderDemo', [
     }
   })
   .constant('BLOB_API_URL', 'https://bm-blob-uploader-dev.api.blinkm.io/')
-  .directive('customOnChange', () => {
+  .directive('filesInput', () => {
     return {
-      restrict: 'A',
-      link: function (scope, element, attrs) {
-        var onChangeHandler = scope.$eval(attrs.customOnChange);
-        element.bind('change', onChangeHandler);
+      require: 'ngModel',
+      link: (scope, elem, attrs, ngModel) => {
+        elem.on('change', (e) => {
+          var files = elem[0].files
+          ngModel.$setViewValue(files)
+        })
       }
-    };
+    }
   })

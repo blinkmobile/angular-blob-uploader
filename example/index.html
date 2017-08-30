@@ -16,7 +16,7 @@
   <h1>Angular BMUploader</h1>
   <div class="container">
     <div>
-      <input type="file" custom-on-change="uploadFile">
+      <input type="file" files-input ng-model="ctrl.files" multiple>
     </div>
     <div id='result' ng-show="{{ctrl.result}}">
       {{ctrl.result}}
