@@ -35,7 +35,8 @@ angular.module('bmUploaderDemo', [
 
     vm.progress = (uploaded, total) => {
       const percentage = parseInt((uploaded * 100) / total)
-      vm.uploaded = percentage
+      vm.percentageUploaded = percentage
+      vm.uploaded = uploaded
       vm.total = total
       $scope.$apply()
     }
