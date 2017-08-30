@@ -8,6 +8,7 @@
   "words": [
     "angularjs",
     "blinkmobile",
+    "devtool",
     "uploader"
   ],
   // flagWords - list of words to be always considered incorrect

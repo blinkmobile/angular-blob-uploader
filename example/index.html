@@ -5,14 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Angular BMUploader demo</title>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="../node_modules/angular/angular.js"></script>
   <script src="./app.js"></script>
   <script src="../dist/angular-bm-uploader.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body ng-controller="DemoController as ctrl">
   <h1>Angular BMUploader</h1>
-  <div>
-    <bm-image image-id="{{'2cc12da2-c0fd-4d76-b531-8afe2fe17228'}}"></bm-image>
+  <div class="container">
+    <div>
+      <input type="file" custom-on-change="uploadFile">
+    </div>
+    <div id='result' ng-show="{{ctrl.result}}">
+      {{ctrl.result}}
+    </div>
+    <div class='progress'>
+      <div class='progress-bar' role="progressbar" aria-valuenow="{{ctrl.uploaded}}" aria-valuemin="0" aria-valuemax="{{ctrl.total}}" style="width:0%">
+        {{ctrl.uploaded}}%
+      </div>
+    </div>
+    <button type='button' id='cancel' ng-click='ctrl.cancel()'>Cancel</button>
+    <div>
+      <bm-image image-id="{{'2cc12da2-c0fd-4d76-b531-8afe2fe17228'}}"></bm-image>
+    </div>
   </div>
 </body>
 </html>
