@@ -8,12 +8,13 @@ AngularJS 1.x component for uploading and retrieving content using the [BM Uploa
    ```
    npm install @blinkmobile/angular-bm-uploader
    ```
-1.  Add the module to your app
+1.  Add the module to your app and set the URL constant that will be used to call the blob service
 
    ```js
    angular.module('app', [
      'bmUploader'
    ])
+   .constant('BLOB_API_URL', 'www.blobservice.com')
    ```
 
 ## Usage
