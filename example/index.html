@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="bmUploaderDemo">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Angular BMUploader demo</title>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="../node_modules/angular/angular.js"></script>
+  <script src="./app.js"></script>
+  <script src="../dist/angular-bm-uploader.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body ng-controller="DemoController as ctrl">
+  <h1>Angular BMUploader</h1>
+  <div class="container">
+    <div>
+      <input type="file" accept=".jpg, .jpeg, .png" files-input ng-model="ctrl.files" multiple>
+    </div>
+    <div id='result' ng-show="ctrl.result">
+      {{ctrl.result}}
+    </div>
+    <div class='progress'>
+      <div class='progress-bar' role="progressbar" aria-valuenow="{{ctrl.uploaded}}" aria-valuemin="0" aria-valuemax="{{ctrl.total}}" ng-style="{ 'width': ctrl.percentageUploaded + '%' }">
+        {{ctrl.percentageUploaded}}%
+      </div>
+    </div>
+    <button type='button' id='cancel' ng-click='ctrl.cancel()'>Cancel</button>
+    <div>
+      <bm-image image-id="{{ctrl.imageId}}"></bm-image>
+    </div>
+  </div>
+</body>
+</html>
