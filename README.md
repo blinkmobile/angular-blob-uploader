@@ -26,7 +26,7 @@ AngularJS 1.x component for uploading and retrieving content using the [BM Uploa
     $scope /* :Object */,
     bmUploaderService /* :Object */
   ) {
-    'ngInject
+    'ngInject'
 
     function upload(content) {
       bmUploaderService.uploadContent(content, progressFn)
@@ -36,8 +36,8 @@ AngularJS 1.x component for uploading and retrieving content using the [BM Uploa
               this.imageId = uploader.id
               $scope.$apply()
             })
-    }
-  }
+    })
+  }) 
   ```
 ### Retrieving content URL
 Inject the bmUploaderService which returns the [BMUploader](https://github.com/blinkmobile/bm-uploader.js/blob/master/README.md) object 
@@ -46,7 +46,7 @@ Inject the bmUploaderService which returns the [BMUploader](https://github.com/b
     $scope /* :Object */,
     bmUploaderService /* :Object */
   ) {
-    'ngInject
+    'ngInject'
 
     function retrieveContentURL(id) {
       bmUploaderService.retrieveContentUrl(id)
@@ -55,7 +55,7 @@ Inject the bmUploaderService which returns the [BMUploader](https://github.com/b
           $scope.$apply()
         })
     }
-  }
+  })
   ```
 ### Retrieving and Displaying images  
   ```html
