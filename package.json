@@ -1,6 +1,6 @@
 {
-  "name": "angular-bm-uploader",
-  "description": "Angular wrapper for the blob uploader service",
+  "name": "@blinkmobile/angular-bm-uploader",
+  "description": "Angular wrapper for the blob uploader service to upload and retrieve content of types buffer, blob or stream",
   "version": "1.0.0",
   "author": "Kieren Powell <kieren@blinkmobile.com.au> (https://github.com/kizaonline)",
   "bugs": {
@@ -45,10 +45,20 @@
     "node": ">=6",
     "npm": ">=3"
   },
+  "files": [
+    "dist/",
+    "src/",
+    "example/"
+  ],
   "homepage": "https://github.com/blinkmobile/angular-bm-uploader#readme",
-  "keywords": [],
+  "keywords": [
+    "S3",
+    "angularJS",
+    "browser",
+    "upload"
+  ],
   "license": "ISC",
-  "main": "index.js",
+  "main": "dist/angular-bm-uploader.min.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/blinkmobile/angular-bm-uploader.git"
